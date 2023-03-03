@@ -1,15 +1,16 @@
 // TODO: add code here
-let astronautList = [];
+let astronautList;
 
 window.addEventListener("load", function() {
+    //let astronautList;
 
     fetch("https://handlers.education.launchcode.org/static/astronauts.json")
         .then(function(response){
             return response.json();
         })
         .then(function(json){
-            console.log(json);
-            //astronautList = json;
+            //console.log(json);
+            astronautList = json;
 
      let cont = document.getElementById("container");
      //console.log("Second Try: " + astronautList);
@@ -30,4 +31,6 @@ window.addEventListener("load", function() {
      cont.appendChild(astro);
      }
     })
+
+    console.log("Test " + astronautList);
 });
